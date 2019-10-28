@@ -6,9 +6,8 @@ const EventHubReader = require("./scripts/event-hub-reader.js");
 
 const thisPort = "3333";
 
-const iotHubConnectionString =
-	"HostName=this-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=7ySgXo8yBnuZvQHN10qcnoNszEFKZn0V2pt7tMYGne4=";
-const eventHubConsumerGroup = "this-group";
+const iotHubConnectionString = process.env.IotHubConnectionString;
+const eventHubConsumerGroup = process.env.EventHubConsumerGroup;
 
 // Redirect requests to the public subdirectory to the root
 const app = express();
